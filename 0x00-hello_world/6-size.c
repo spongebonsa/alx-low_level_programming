@@ -4,7 +4,7 @@
  * main - prints the size of various types on computer
  *
  * Return: 0 if existed
- * */
+ */
 
 int main(void)
 {
