@@ -16,6 +16,6 @@ int main(void)
 		if (c % 2 == 0)
 			add += c;
 	}
-	printf("i\n", add);
+	printf("%i\n", add);
 	return (0);
 }
