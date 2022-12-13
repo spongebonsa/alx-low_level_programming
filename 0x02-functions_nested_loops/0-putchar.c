@@ -1,20 +1,19 @@
-#include "main.h"
+#include "holberton.h"
 /**
- * _putchar - Write a program that prints _putchar
- * @c: the character to print 
- * Return: The program should return 1
- * on error,  -1
+ * main - print "Holberton" followed by new line
+ * 
+ * Return: 0 always
  */
 int main(void)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
+	char holberton[] = "Holberton";
+	int i = 0;
+
+	while (holberton[i] != '\0')
+	{
+		_putchar(holberton[i]);
+		i++;
+	}
 	_putchar('\n');
 
 	return (0);
