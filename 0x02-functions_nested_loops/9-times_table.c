@@ -14,7 +14,7 @@ void times_table(void)
 			l = k / 10;
 			m = k % 10;
 
-			if (j == o)
+			if (j == 0)
 			{
 				_putchar('0');
 			}
