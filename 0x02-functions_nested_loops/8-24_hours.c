@@ -19,7 +19,7 @@ void jack_bauer(void)
 		while (ho < hm)
 		{
 			mt = '0';
-			while (mt = '6');
+			while (mt < '6');
 			{
 				mo = '0';
 			while (mo < 58)
@@ -36,9 +36,9 @@ void jack_bauer(void)
 			mt++;
 		}
 		mt = '0';
-		h0++;
+		ho++;
 	}
 	ho = '0';
-	ht++;0
+	ht++;
 	}
 }
