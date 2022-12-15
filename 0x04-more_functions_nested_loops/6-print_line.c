@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_lin - draw line
+ * print_line - draw line
  * @n: parameter
  * Return: something
  */
