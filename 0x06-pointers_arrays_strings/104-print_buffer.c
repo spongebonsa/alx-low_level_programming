@@ -1,44 +1,45 @@
-#include "main.h"
+#include "mainn.h"
+#include <stdio.h>
 
 /**
- * cap_string - capitalizes all words of a string
- * @s: captitalized letter
- *
- * Return: void function
+ * print_buffer - Prints a buffer 10 bytes at a time, starting with
+ *                the byte position, then showing the hex content,
+ *                then displaying printable charcaters.
+ * @b: The buffer to be printed.
+ * @size: The number of bytes to be printed from the buffer.
  */
 
-char *cap_string(char *s)
+void print_buffer(char *b, int size)
 {
-	int i = 0;
+	int byte, index;
 
-	if (s[0] >= 'a' && s[0] <= 'z')
+	for (byte = 0; byte < size; byte += 10)
 	{
-		s[0] -= 32;
-	}
-	while (s[i] != '\0')
-	{
-		if (is_separator(s[i]) && (s[i + 1] >= 'a' && s[i + 1] <= 'z'))
-			s[i + 1] -= 32;
-		i++;
-	}
-	return (s);
-}
-/**
- * is_separator - if word separator
- * @c: char to be checked
- *
- * Return: 1 if true
- */
-int is_separator(char c)
-{
-	char arr[13] = {',', ';', '.', '!', '?', '"', '(', ')', '{',
-		      '}', '\t', '\n', ' '};
-	int a = 0, var = 0;
+		printf("%08x: ", byte);
 
-	for (; a < 13; a++)
-	{
-		if (c == arr[a])
-			var = 1;
+		for (index = 0; index < 10; index++)
+		{
+			if ((index + byte) >= size)
+				printf("  ");
+			else
+				printf("%02x", *(b + index + byte));
+			if ((index % 2) != 0 && index != 0)
+				printf(" ");
+		}
+		for (index = 0; index < 10; index++)
+		{
+			if ((index + byte) >= size)
+				break;
+			else if (*(b + index + byte) >= 31 &&
+				 *(b + index + byte) <= 126)
+				printf("%c", *(b + index + byte));
+			else
+				printf(".");
+		}
+		if (byte >= size)
+			continue;
+		printf("\n");
 	}
-	return (var);
+	if (size <= 0)
+		printf("\n");
 }
